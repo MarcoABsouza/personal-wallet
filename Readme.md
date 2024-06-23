@@ -18,7 +18,7 @@ This project implements an Expense Management System in Python, using SQLite for
 
         Transaction management to ensure data consistency.
 
-        Trigger to maintain referential integrity between tables when deleting a category.
+        Trigger to upkeep referential integrity between tables when deleting a category.
 
 *   Graphical Interface:
         User-friendly and intuitive interface developed with Tkinter.
