@@ -90,7 +90,7 @@ def insert_category_form():
 
 # ------------- Insert revenues in database table Revenue
 def insert_revenue_form():
-    name = "Revenue"
+    name = "REVENUE"
     date = e_date_revenue.get()
     value = e_value_revenue.get()
 

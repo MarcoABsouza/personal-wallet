@@ -27,7 +27,7 @@ try:
                 id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 date_revenue DATE,
                 value_revenue DECIMAL(10, 2) NOT NULL CHECK(value_revenue > 0),
-                category_name TEXT NOT NULL DEFAULT 'RECEITA' CHECK(category_name = 'RECEITA')
+                category_name TEXT NOT NULL DEFAULT 'REVENUE' CHECK(category_name = 'REVENUE')
             )
         """)
     print("Table Revenue created successfully.")
