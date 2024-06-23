@@ -41,7 +41,6 @@ style.theme_use("clam")
 style.configure("Treeview", highlightthickness=0, bd=0, font=('Calibri', 9)) # Modify the font of the body
 
 
-
 ################# Frames ####################
 frameUp = Frame(window, width=1043, height=50, bg=co1,  relief="flat",)
 frameUp.grid(row=0, column=0)

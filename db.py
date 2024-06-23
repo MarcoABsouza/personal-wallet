@@ -5,8 +5,9 @@ connection = lite.connect("expense-control/database.db")
 cursor = connection.cursor()
 
 # Create tables in our Database
+
+# Table Category
 try:
-    # Table Category
     with connection:
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS Category (
@@ -18,8 +19,8 @@ try:
 except lite.Error as error:
     print(f"Database error table Category: {error}")
 
+ # Table Revenue
 try:
-    # Table Revenue
     with connection:
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS Revenue (
@@ -33,8 +34,8 @@ try:
 except lite.Error as error:
     print(f"Database error table Revenue: {error}")
 
+# Table Expenses
 try:
-    # Table Expenses
     with connection:
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS Expenses (
@@ -49,8 +50,10 @@ try:
 except lite.Error as error:
     print(f"Database error table Expense: {error}")
 
+
+# Create Index in tables
 try:
-    # Create Index in tables
+    
     with connection:
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_category_expense ON Expenses(category_id)")
     print("Index idx_category_expense created successfully.")

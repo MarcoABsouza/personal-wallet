@@ -13,20 +13,23 @@ cursor = connection.cursor()
 
 # Insert in Category table
 def insert_category(name_category):
-    with connection:
-        query = "INSERT INTO Category (name_category) VALUES (?)"
-        cursor.execute(query, name_category)
+    try:
+        with connection:
+            query = "INSERT INTO Category (name_category) VALUES (?)"
+            cursor.execute(query, name_category)
+    except lite.Error as error:
+        print(f"Insert error in Category: {error}")
 
 # Insert in Revenue table
 def insert_revenue(revenue_data):
     with connection:
-        query = "INSERT INTO Revenue (date_revenue,value_revenue,category) VALUES (?,?,?)"
+        query = "INSERT INTO Revenue (date_revenue,value_revenue,category_name) VALUES (?,?,?)"
         cursor.execute(query,revenue_data)
 
 # Insert in Expenses table
 def insert_expense(expense_data):
     with connection:
-        query = "INSERT INTO Expenses (date_expense, value_expense, category) VALUES (?,?,?)"
+        query = "INSERT INTO Expenses (date_expense, value_expense, category_id) VALUES (?,?,?)"
         cursor.execute(query,expense_data)
 
 
@@ -86,30 +89,6 @@ def view_expenses():
         for row in rows:
             list_expenses.append(row)
     return list_expenses
-
-
-# -------------- Function Update
-
-# Update item in Category
-def update_category(category_update):
-    with connection:
-        query = "UPDATE Category SET name_category=? Where id=?"
-        cursor.execute(query, category_update)
-
-
-# Update item in Revenue
-def update_revenue(revenue_update):
-    with connection:
-        query = "UPDATE Revenue SET date_revenue=?, value_revenue=? Where id=?"
-        cursor.execute(query, revenue_update)
-
-
-# Update item in Expenses
-def update_expense(expense_update):
-    with connection:
-        query = "UPDATE Expenses SET date_expense=?, value_expense=?,category=? Where id=?"
-        cursor.execute(query, expense_update)
-
 
 
 def table():
