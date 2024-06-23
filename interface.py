@@ -169,7 +169,7 @@ def delete_form():
             graph_pie()
 
             resume()
-        else:
+        elif name == "Expenses":
             delete_expense([value])
             messagebox.showinfo('Sucesso', 'Os dados foram deletados com sucesso')
 
@@ -182,8 +182,6 @@ def delete_form():
             graph_pie()
 
             resume()
-            
-
     except IndexError:
         messagebox.showerror('Erro', 'Seleciona um dos dados na tabela')
 # ------------- percentage
@@ -207,7 +205,6 @@ def percentage():
     l_percentage.place(x=200, y=35)
 
 # Função para mostrar o gráfico de barras
-
 def graph_bar():
     list_categories = ["Revenue", "Expenses", "Balance"]
     list_values = bar_values()

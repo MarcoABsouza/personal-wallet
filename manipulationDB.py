@@ -36,10 +36,10 @@ def insert_expense(expense_data):
 # -------------- Function Delete
 
 # Delete in Category table
-def delete_category(id_category):
+def delete_category(name_category):
     with connection:
-        query = "DELETE FROM Category WHERE id=?"
-        cursor.execute(query, id_category)
+        query = "DELETE FROM Category WHERE name_category=?"
+        cursor.execute(query, (name_category,))
 
 
 # Delete in Revenue table
