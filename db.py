@@ -12,9 +12,9 @@ with connection:
 
 # Table Revenue
 with connection:
-    cursor.execute("CREATE TABLE if not exists Revenue(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, date_revenue DATE, value_revenue DECIMAL NOT NULL, category TEXT NOT NULL)")
+    cursor.execute("CREATE TABLE if not exists Revenue(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, date_revenue DATE, value_revenue DECIMAL (10, 2) NOT NULL DEFAULT 0, category TEXT NOT NULL)")
 
 # Table Expenses
 with connection:
-    cursor.execute("CREATE TABLE if not exists Expenses(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, date_expense DATE, value_expense DECIMAL NOT NULL, category TEXT NOT NULL)")
+    cursor.execute("CREATE TABLE if not exists Expenses(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, date_expense DATE, value_expense DECIMAL (10, 2) NOT NULL DEFAULT 0, category TEXT NOT NULL)")
 

@@ -160,7 +160,7 @@ def percentage_value():
         revenue_list.append(i[2])
 
     revenue_amount = sum(revenue_list)
-
+    
     # Despesas Total ------------------------
     expenses = view_expenses()
     expenses_list = []
@@ -171,7 +171,10 @@ def percentage_value():
     expenses_amount = sum(expenses_list)
 
     # Despesas Total ------------------------
-    amount =  ((revenue_amount - expenses_amount) / revenue_amount) * 100
+    try:
+        amount =  ((revenue_amount - expenses_amount) / revenue_amount) * 100
+    except ZeroDivisionError:
+        amount = 0
 
     return[amount]
 
