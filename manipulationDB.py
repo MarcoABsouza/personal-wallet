@@ -157,7 +157,6 @@ def percentage_value():
 
     return[amount]
 
-
 def pie_values():
     expenses = view_expenses()
     table_list = []
@@ -177,4 +176,3 @@ def pie_values():
         categories_list.append(i)
 
     return([categories_list,qtd_list])
-
